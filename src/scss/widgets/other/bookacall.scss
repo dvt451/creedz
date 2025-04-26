@@ -1,0 +1,216 @@
+.bookacall {
+   &__container{
+      max-width: toRem(1067);
+      @include adaptiveValue("padding-top", 254, 204);
+      @include adaptiveValue("padding-bottom", 160, 80);
+   }
+   // .bookacall__title
+
+   &__title {
+      text-align: center;
+      font-family: var(--fSFM);
+      @include adaptiveValue("font-size", 64, 40);
+      line-height: 106.25%;
+      @include adaptiveValue("margin-bottom", 104, 64);
+
+      // .bookacall__title_2
+
+      &_2 {
+         font-family: var(--fSFM);
+         @include adaptiveValue("font-size", 26, 18);
+         line-height: normal;
+      }
+   }
+
+   // .bookacall__inputs
+
+   &__inputs {
+      @include adaptiveValue("margin-top", 81, 24);
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 48, 24);
+   }
+
+   // .bookacall__label
+
+   &__label {
+      input{
+         &::placeholder{
+            color: #B0B0AE;
+         }
+         &:focus{
+            border-color: var(--main-text-color);
+         }
+         color: var(--main-text-color);
+         width: 100%;
+         background-color: transparent;
+         outline: none;
+         @include adaptiveValue("padding-bottom", 24, 16);
+         border-bottom: toRem(1) solid #B0B0AE;
+      }
+   }
+
+   &__error{
+      padding-top: toRem(8);
+      color: var(--colRed);
+   }
+
+   // .bookacall__comments
+
+   &__comments {
+      @include adaptiveValue("margin-top", 88, 48);
+      .bookacall__title_2{
+         @include adaptiveValue("margin-bottom", 36, 24);
+      }
+      textarea{
+         &::placeholder{
+            color: #B0B0AE;
+         }
+         &:focus{
+            border-color: var(--main-text-color);
+         }
+         min-height: toRem(160);
+         max-height: toRem(300);
+         color: var(--main-text-color);
+         width: 100%;
+         outline: none;
+         background-color: transparent;
+         padding: toRem(32);
+         border-radius: toVW(10);
+         border: toRem(1) solid #B0B0AE;
+         resize: vertical;
+      }
+   }
+
+   &__questions{
+      @include adaptiveValue("margin-top", 68, 48);
+      @include adaptiveValue("margin-bottom", 104, 48);
+      h3{
+         @include adaptiveValue("margin-bottom", 30, 24);
+      }
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 110, 48);
+   }
+
+   // .bookacall__buttons
+
+   &__buttons {
+      display: flex;
+      @include adaptiveValue("gap", 37, 25);
+   }
+   &__button{
+      border: toRem(1) solid var(--colDarkAndLight);
+      flex: 1 1 auto;
+      background-color: var(--colLightAndDark);
+      color: var(--colDarkAndLight);
+      &._active{
+         background-color: var(--colDarkAndLight);
+         color: var(--colLightAndDark);
+         border-color: var(--colDarkAndLight);
+      }
+      @media (any-hover: hover){
+         &:hover{
+            background-color: var(--colDarkAndLight);
+            color: var(--colLightAndDark);
+            border-color: var(--colDarkAndLight);
+         }
+      }
+   }
+   &__submit{
+      background-color: var(--colDarkAndLight);
+      color: var(--colLightAndDark);
+      width: 100%;
+      @include adaptiveValue("font-size", 26, 18);
+      @include adaptiveValue("padding-block", 38, 16);
+      border-radius: toRem(80);
+      @media (any-hover: hover){
+      border: toRem(1) solid var(--colDarkAndLight);
+      &:hover{
+            background-color: var(--colLightAndDark);
+            color: var(--colDarkAndLight);
+            border-color: var(--colDarkAndLight);
+         }
+      }
+      &:active{
+         background-color: var(--colRed);
+      }
+   }
+}
+.bookacall-wrapper{
+   .progress-bar__filled{
+      background-color: #fdfdfd;
+      border: toRem(1) solid #101010;
+      mix-blend-mode: difference;
+   }
+   .progress-bar{
+      background-color: #fdfdfd;
+      mix-blend-mode: difference;
+      &::after{
+         background-color: #fdfdfd;
+         mix-blend-mode: difference;
+      }
+   }
+   .footer{
+      .footer__top{
+         background-color: var(--colDarkAndLight);
+         color: var(--colLightAndDark);
+         .menu{
+            &__link {
+               color: var(--colLightAndDark);
+            }
+         }
+         .footer__send-email{
+            background-color: var(--inputBgBookacall);
+            input{
+               color: var(--colLightAndDark);
+            }
+            button{
+               &:active{
+                  svg{
+                     path{
+                        fill: var(--colRed);
+                     }
+                  }
+               }
+               path{
+                  fill: var(--colLightAndDark);
+               }
+            }
+         }
+      }
+      .footer__bottom{
+         background-color: var(--colLightAndDark);
+         color: var(--colDarkAndLight);
+         .media{
+            &__frame{
+               @media (any-hover: hover){
+                  &:hover{
+                     background-color: var(--colDarkAndLight);
+                     path{
+                        fill: var(--colLightAndDark);
+                     }
+                     &.stroke{
+                        path{
+                           stroke: var(--colLightAndDark);
+                        }
+                     }
+                  }
+               }
+               &::after{
+                  border-color: var(--colDarkAndLight);
+               }
+               path{
+                  fill: var(--colDarkAndLight);
+               }          
+            }
+            .stroke{
+               path{
+                  stroke: var(--colDarkAndLight);
+                  fill: transparent;
+               }
+            }
+         }
+      }
+   }
+}

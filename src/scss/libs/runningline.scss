@@ -1,0 +1,12 @@
+.running-line__wrapper{
+   animation: runningLeft 35s infinite 0s linear;
+}
+
+@keyframes runningLeft {
+   0%{
+      transform: translateX(-50%);
+   }
+   100%{
+      transform: translateX(-100%);
+   }
+}

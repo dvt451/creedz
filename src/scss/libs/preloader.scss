@@ -1,0 +1,133 @@
+.intro {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 99;
+	background-color: var(--colLightAndDark);
+	svg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: calc(100% + toRem(300));
+		path {
+			fill: var(--colLightAndDark);
+		}
+	}
+	p {
+		display: flex;
+		color: var(--colDarkAndLight);
+		font-size: toRem(42);
+		align-items: center;
+		position: absolute;
+		z-index: 1;
+		span {
+			display: block;
+			width: toRem(10);
+			height: toRem(10);
+			background-color: var(--colDarkAndLight);
+			border-radius: 50%;
+			margin-right: toRem(10);
+		}
+	}
+}
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--colLightAndDark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	animation: hidingStar 0.5s linear 1.5s forwards;
+	&__star-container {
+		position: relative;
+		width: toRem(344);
+		height: toRem(344);
+	}
+	&__star {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		scale: 0;
+		&_1 {
+			animation: scalingStar 0.5s forwards 0.6s ease-in-out;
+			path {
+				fill: var(--primary);
+			}
+		}
+		&_2 {
+			animation: scalingStar 0.5s forwards 0.9s ease-in-out;
+			path {
+				fill: var(--colLightAndDark);
+			}
+		}
+		&_3 {
+			animation: scalingStar 0.5s forwards 1.2s ease-in-out;
+			path {
+				fill: var(--primary);
+			}
+		}
+	}
+}
+.home {
+	.preloader {
+		animation: hidingStar 0.5s forwards 8s linear;
+		&__star {
+			&_1 {
+				animation: scalingStar 0.5s forwards 7s ease-in-out;
+			}
+			&_2 {
+				animation: scalingStar 0.5s forwards 7.3s ease-in-out;
+			}
+			&_3 {
+				animation: scalingStar 0.5s forwards 7.6s ease-in-out;
+			}
+		}
+		&.instant {
+			.preloader__star {
+				&_1 {
+					animation: scalingStar 0.5s forwards 0.6s ease-in-out;
+				}
+				&_2 {
+					animation: scalingStar 0.5s forwards 0.9s ease-in-out;
+				}
+				&_3 {
+					animation: scalingStar 0.5s forwards 1.2s ease-in-out;
+				}
+			}
+			animation: hidingStar 0.5s linear 1.5s forwards;
+		}
+	}
+}
+//========================================================================================================================================================
+
+@keyframes scalingStar {
+	to {
+		scale: 30;
+	}
+}
+@keyframes hidingStar {
+	0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+		display: none;
+		pointer-events: none;
+		visibility: hidden;
+	}
+	100% {
+		display: none;
+		opacity: 0;
+		pointer-events: none;
+		visibility: hidden;
+	}
+}

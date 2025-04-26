@@ -1,0 +1,278 @@
+.pricing{
+   @include adaptiveValue("padding-top", 137, 0);
+   @include adaptiveValue("padding-bottom", 143, 34);
+   color: var(--colLightAndDark);
+   background-color: var(--colDarkAndLight);
+
+   // .pricing__container
+
+   &__container{
+      @include adaptiveValue("padding-top", 100, 84);
+   }
+
+   // .pricing__title
+
+   &__title {
+      @include adaptiveValue("margin-bottom", 60, 26);
+   }
+
+   // .pricing__content
+
+   &__content{
+      display: flex;
+      flex-direction: column;
+      @media (max-width: em(1250)){
+         gap: toRem(20);
+      }
+   }
+
+   .pricing__column_block{
+      position: relative;
+      min-width: 0;
+   }
+   .swiper {
+      padding-block: toRem(50);
+      @media (min-width:$tablet){
+         margin-top: toRem(-60);
+      }
+      mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+      height: toRem(580);
+      @media (max-width: em(1250)){
+         height: toRem(510);
+      }
+      @media (max-width:$mobile){
+         height: toRem(550);
+      }
+      @media (max-width:$mobileSmall){
+          height: toRem(580); 
+      }
+   }
+
+   // .pricing__row
+
+   &__row{
+      display: flex;
+      @include adaptiveValue("gap", 123, 20,$containerWidth,991.98);
+
+
+      &:nth-child(1){
+         @media (max-width: em(1250)){
+            flex-direction: column;
+         }
+         .pricing__column_right{
+            transition: all 0.7s ease;
+         }
+      }
+      &:nth-child(2){
+         @media (max-width:$mobile){
+             flex-direction: column-reverse; 
+             gap: 0;
+         }
+         .pricing__column_right{
+            margin-top: toRem(76);
+            @media (max-width: em(1250)){
+                margin-top: toRem(26); 
+            }
+            display: flex;
+            align-items: flex-end;
+            @media (max-width:$mobile){
+               margin-top: toRem(0);
+            }
+         }
+         .pricing__column_left{
+            @media (min-width:em(1250)){
+               padding-top: toRem(56);
+            }
+            @media (max-width:$mobile){
+                @include adaptiveValue("padding-top", 56, 40); 
+            }
+         }
+      }
+   }
+
+
+   // .pricing__column
+
+   &__column {
+      &_left{
+         flex: 1 0;
+         @include adaptiveValue("flex-basis", 438, 220,$containerWidth,1250);
+         @include adaptiveValue("max-width", 438, 220,$containerWidth,1250);
+         @media (max-width: em(1250)){
+             max-width: 100%; 
+             flex-basis: auto;
+         }
+         @media (min-width: em(1250)){
+            border-right: toRem(1) solid #3B3B3B;
+         }
+         .pricing__text{
+            @media (min-width: em(1250)){
+               max-width: toRem(321);
+            }
+            padding-top: toRem(40);
+            border-top: toRem(1) solid #3B3B3B;
+            @media (max-width: em(1250)){
+               margin-right: toRem(36);
+            }
+            @include adaptiveValue("font-size", 18, 16);
+         }
+      }
+      // .pricing__column_right
+
+      &_right {
+         flex: 1 1 auto;
+         .pricing__text{
+            line-height: 177.778%;
+            @include adaptiveValue("margin-top", 34, 16);
+            @include adaptiveValue("margin-bottom", 43, 24);
+            @media (max-width: em(1250)){
+                line-height: normal;
+            }
+         }
+      }
+   }
+
+   // .pricing__list
+
+   &__list {
+      display: inline-flex;
+      flex-direction: column;
+      @media (max-width: em(1250)){
+          flex-direction: row;
+          flex-wrap: wrap;
+          column-gap: toRem(45);
+      }
+   }
+
+   // .pricing__item
+
+   &__item {
+      @include adaptiveValue("font-size", 24, 16);
+      &:first-child{
+         @media (min-width:em(1250)){
+            button{
+               padding-top: toRem(5);
+            }
+         }
+      }
+      button{
+         padding:  toRem(16) 0;
+         position: relative;
+         &::after{
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: toRem(7);
+            top: calc(100% - toRem(9));
+            left: 0;
+            @media (max-width:$mobile){
+               height: toRem(4); 
+            }
+         }
+         &._active{
+            @media (min-width:em(1250)){
+               margin-bottom: toRem(12);
+                 
+            }
+            &::after{
+               background-color: var(--primary);
+            }
+         }
+      }
+   }
+
+      // .pricing__text
+
+   &__text {
+      color: var(--pricingText);
+   }
+
+   // .pricing__price
+
+   &__price {
+      @include adaptiveValue("font-size", 40, 24);
+      @media (max-width: em(1250)){
+          font-family: var(--fSFM); 
+      }
+      span{
+         font-size: toRem(24);
+      }
+   }
+
+   // .pricing__buttons
+
+   &__buttons{
+      display: inline-flex;
+      gap: toRem(16);
+      flex-wrap: wrap;
+   }
+
+   // .pricing__button
+
+   &__button {
+      @include adaptiveValue("padding-inline", 47, 32);
+      @include adaptiveValue("padding-block", 16, 10);
+      line-height: 177.778%;
+      border-radius: toRem(50);
+      border: toRem(1) solid;
+      transition: all 0.3s;
+   }
+
+   // .pricing__reach
+
+   &__reach {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #fdfdfd;
+      @include adaptiveValue("font-size", 18, 16);
+      width: toRem(354);
+      text-align: center;
+      @media (any-hover: hover){
+         &:hover{
+            background-color: var(--colLightAndDark);
+            color: var(--colDarkAndLight);
+            border-color: var(--colLightAndDark);
+         }
+      }
+   }
+}
+.pricing-services {
+
+   // .pricing-services__list
+
+   &__list {
+      display: flex;
+      gap: toRem(16);
+      overflow-x: auto;
+      @media (max-width: em(1250)){
+         padding-bottom: toRem(20);
+      }
+   }
+
+   &__column{
+      display: flex;
+      flex-direction: column;
+      gap: toRem(16);
+   }
+
+   // .pricing-services__item
+
+   &__item {
+      display: flex;
+      align-items: center;
+      gap: toRem(16);
+      line-height: 177.778%;
+      @media (max-width:$mobile){
+         line-height: 200%;
+      }
+      white-space: nowrap;
+      @include adaptiveValue("font-size", 18, 16);
+      svg{
+         @include adaptiveValue("width", 20, 16);
+         @include adaptiveValue("height", 20, 16);
+         path{
+            fill: var(--colLightAndDark);
+         }
+      }
+   }
+}

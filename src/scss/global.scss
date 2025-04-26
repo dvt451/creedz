@@ -1,0 +1,154 @@
+html,
+body {
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+}
+.portfolio-page-wrapper,
+.bookacall-wrapper,
+.bookacall,
+.notfound,
+.policy {
+	.awwwards {
+		mix-blend-mode: difference;
+	}
+	.preloader {
+		background-color: #fdfdfb;
+		&__star {
+			&_1 {
+				path {
+					fill: #101010;
+				}
+			}
+			&_2 {
+				path {
+					fill: #fdfdfb;
+				}
+			}
+			&_3 {
+				path {
+					fill: #101010;
+				}
+			}
+		}
+	}
+	.header {
+		&__logo {
+			svg {
+				&:nth-child(1) {
+					path {
+						fill: var(--colDarkAndLight);
+					}
+				}
+			}
+		}
+	}
+	.online-button__icon {
+		span {
+			background-color: var(--colDarkAndLight);
+		}
+	}
+}
+
+body {
+	background-color: var(--colLightAndDark);
+
+	&.cadence-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colGreen);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colGreen);
+		}
+		.progress-bar__filled {
+			background-color: var(--colGreen);
+		}
+	}
+	&.creedz-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colRed);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colRed);
+		}
+		.progress-bar__filled {
+			background-color: var(--colRed);
+		}
+	}
+	&.codelab-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colBlue);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colBlue);
+		}
+		.progress-bar__filled {
+			background-color: var(--colBlue);
+		}
+	}
+	&.skrex-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colOrange);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colOrange);
+		}
+		.progress-bar__filled {
+			background-color: var(--colOrange);
+		}
+	}
+	&.applexnike-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colApplexnike);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colApplexnike);
+		}
+		.progress-bar__filled {
+			background-color: var(--colApplexnike);
+		}
+	}
+	&.portfolio-html .progress-bar {
+		display: none;
+	}
+	&.cadence-html,
+	&.creedz-html,
+	&.codelab-html,
+	&.skrex-html,
+	&.applexnike-html {
+		.header {
+			&.hide {
+				.header__main {
+					@media (min-width: $tablet) {
+						top: toRem(-110);
+					}
+				}
+			}
+		}
+		.awwwards {
+			.js-color-text {
+				fill: #fdfdfd;
+			}
+		}
+	}
+}

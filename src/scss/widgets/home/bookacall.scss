@@ -1,0 +1,10 @@
+.bookacall-wrapper{
+   .progress-bar{
+      background-color: #fdfdfd;
+      mix-blend-mode: difference;
+      &::after{
+         background-color: #fdfdfd;
+         mix-blend-mode: difference;
+      }
+   }
+}

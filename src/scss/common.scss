@@ -1,0 +1,181 @@
+h2 {
+	font-family: "SF Pro Display Medium";
+	@include adaptiveValue("font-size", 48, 24);
+}
+.button {
+	border-radius: toRem(50);
+	@include adaptiveValue("padding-block", 12, 10);
+	@include adaptiveValue("padding-inline", 41, 32);
+	@include adaptiveValue("font-size", 18, 16);
+	line-height: 177.778%;
+	font-family: var(--fSFM);
+	transition: all 0.2s;
+}
+.logo-icons {
+	path {
+		fill: #fdfdfb;
+	}
+}
+.button-to-head {
+	position: fixed;
+	bottom: toRem(86);
+	right: toRem(86);
+	mix-blend-mode: difference;
+	z-index: 9;
+	width: toRem(71);
+	height: toRem(71);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fdfdfb;
+	border: toRem(1) solid #fdfdfb;
+	border-radius: 50%;
+	transform: scale(0);
+	@media (max-width: $mobile) {
+		right: toRem(50);
+		bottom: toRem(50);
+		width: toRem(40);
+		height: toRem(40);
+		svg {
+			width: toRem(13);
+			height: toRem(13);
+		}
+	}
+	path {
+		fill: #0c0b0b;
+		transition: all 0.3s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: transparent;
+			transition: all 0.3s;
+			path {
+				fill: #fdfdfb;
+			}
+		}
+	}
+}
+.header-logo {
+	background-color: transparent;
+	text-align: left;
+	&__layer {
+		display: inline-flex;
+		align-items: center;
+		gap: toRem(10);
+		position: relative;
+		&::after {
+			content: "©";
+			position: absolute;
+			bottom: toRem(4);
+			left: calc(100% + toRem(4));
+			font-weight: 400;
+			font-size: toRem(14);
+			font-family: "Inter";
+		}
+	}
+	svg {
+		&:nth-child(1) {
+			@include adaptiveValue("width", 34, 31, $containerWidth, 991.98);
+			path {
+				fill: var(--primary);
+			}
+		}
+		&:nth-child(2) {
+			@include adaptiveValue("width", 102, 85, $containerWidth, 991.98);
+			path {
+				fill: var(--main-text-color);
+			}
+		}
+	}
+}
+.link-to-portfolio {
+	position: relative;
+	flex: 0 0;
+	@include adaptiveValue("flex-basis", 113, 90, $containerWidth, 991.98);
+	@include adaptiveValue("width", 113, 90, $containerWidth, 991.98);
+	@media (max-width: $tablet) {
+		flex-basis: toRem(113);
+		width: toRem(113);
+	}
+	height: toRem(53);
+	padding-block: toRem(18);
+	border-radius: toRem(50);
+	background-color: var(--colDarkAndLight);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	path {
+		fill: var(--colLightAndDark);
+	}
+}
+.available-now {
+	color: var(--colDarkAndLight);
+	text-align: center;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	gap: toRem(8);
+	white-space: nowrap;
+	border-radius: toRem(50);
+	border: toRem(1) solid var(--colDarkAndLight);
+	padding-left: toRem(14);
+	position: relative;
+	overflow: hidden;
+	@media (any-hover: hover) {
+		&:hover {
+			.available-now__text_1,
+			.available-now__text_2 {
+				transform: translateY(calc(-400% + toRem(-3)));
+			}
+		}
+	}
+	&__text {
+		transition: all 0.3s;
+		padding-right: toRem(25);
+	}
+	&__text_2 {
+		position: absolute;
+		top: calc(200%);
+		left: toRem(38);
+	}
+	&__icon {
+		width: toRem(16);
+		height: toRem(16);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		span {
+			position: absolute;
+			display: inline-block;
+			width: toRem(7);
+			height: toRem(7);
+			background-color: var(--primary);
+			border-radius: 50%;
+		}
+		.shine {
+			animation: shinAnimation 1s infinite;
+		}
+	}
+}
+@keyframes shinAnimation {
+	100% {
+		opacity: 0;
+		scale: 2.285;
+	}
+}
+#awwwards {
+	position: fixed;
+	z-index: 19;
+	transform: translateY(-50%);
+	top: 50%;
+	left: 0;
+
+	@media (max-width: $tablet) {
+		display: none;
+	}
+}
+.policy #awwwards {
+	left: unset;
+	right: 0;
+}

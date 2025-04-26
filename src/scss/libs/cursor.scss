@@ -1,0 +1,50 @@
+.cursor {
+   position: fixed;
+   top: 0;
+   left: 0;
+   pointer-events: none;
+   z-index: 999;
+   mix-blend-mode: difference;
+   @media (max-width:$tablet){
+      display: none;
+   }
+   &__main{
+      transform: translate(-50%, -50%);
+      path{
+         fill: #fff;
+      }
+   }
+   &._active-project{
+      .usecase-link{
+      transform: translateX(calc(-50% + toRem(15))) translateY(calc(-50% + toRem(15))) scale(1);
+      visibility: visible;
+      }
+   }
+   &._active-letstalk{
+      .letstalk-link{
+         transform: translateX(calc(-50% + toRem(15))) translateY(calc(-50% + toRem(15))) scale(1);
+         visibility: visible;
+         }
+   }
+   .usecase-link,.letstalk-link{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: toRem(132);
+      height: toRem(132);
+      transform-origin: center;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      font-size: toRem(16);
+      text-align: center;
+      border-radius: 50%;
+      color: #000;
+      padding: toRem(15);
+      transition: all 0.3s;
+      visibility: hidden;
+      transform: translateX(calc(-50% + toRem(15))) translateY(calc(-50% + toRem(15))) scale(0);
+   }
+ }

@@ -1,0 +1,70 @@
+.notfound,.received {
+   background-color: var(--colLightAndDark);
+   
+   &__container{
+      height: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-top: toRem(100);
+      padding-bottom: toRem(50);
+      position: relative;
+      z-index: 20;
+   }
+      
+      // .notfound__title
+
+   &__title {
+      @include adaptiveValue("font-size", 360, 160);
+      font-family: 'SF Pro Display bold';
+      color: var(--colDarkAndLight);
+   }
+
+   // .notfound__sub-title
+
+   &__sub-title {
+      font-size: toRem(40);
+      font-family: 'SF Pro Display bold';
+      color: var(--colDarkAndLight);
+   }
+
+   // .notfound__text
+
+   &__text {
+      font-family: 'SF Pro Display Light';
+      color: var(--colDarkAndLight);
+      margin-block: toRem(32);
+      max-width: toRem(767);
+      text-align: center;
+      @include adaptiveValue("font-size", 24, 18);
+   }
+
+   // .notfound__button
+
+   &__button {
+      max-width: toRem(381);
+      width: 100%;
+      text-align: center;
+      background-color: var(--colDarkAndLight);
+      color: var(--colLightAndDark);
+      transition: all 0.3s;
+      border: toRem(1) solid var(--colDarkAndLight);
+      @media (any-hover: hover){
+         &:hover{
+            background-color: var(--colLightAndDark);
+            color: var(--colDarkAndLight);
+            border-color: var(--colDarkAndLight);
+      }
+      }
+   }
+   .logo-icons{
+      path{
+         fill: var(--colDarkAndLight);
+      }
+   }
+   .received__anim{
+      max-height: toRem(350);
+   }
+}

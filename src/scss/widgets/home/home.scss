@@ -1,0 +1,15 @@
+@import "head";
+@import "process";
+@import "services";
+@import "portfolio";
+@import "different";
+@import "pricing";
+@import "letstalk";
+
+.portfolio,.letstalk__layer,.pricing__container {
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+   &.visible {
+      opacity: 1;
+    }
+ }

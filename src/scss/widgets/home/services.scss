@@ -1,0 +1,103 @@
+.services{
+   padding-top: toRem(161);
+   @include adaptiveValue("padding-bottom", 80, 40);
+         // .services__container
+
+   &__container {
+      @media (max-width:$tablet){
+         max-width: 100%;
+         padding: 0; 
+      }
+   }
+
+      // .services__main-title
+
+   &__main-title {
+      text-align: center;
+      margin-bottom: toRem(16);
+      line-height: 141.667%;
+   }
+
+   &__text {
+      color: var(--colDarkAndLight);
+      text-align: center;
+      line-height: 172.222%;
+      max-width: toRem(998);
+      margin: 0 auto toRem(72) auto;
+      @include adaptiveValue("font-size", 18, 16);
+      @media (max-width:$tablet){
+         padding: 0 toRem(12);
+         line-height: normal;
+      }
+   }
+
+         // .services__content
+
+   &__content {
+      display: grid;
+      column-gap: toRem(64);
+      row-gap: toRem(40);
+      grid-template-columns: repeat(2,1fr);
+      flex-wrap: wrap;
+      @media (max-width:$tablet){
+         grid-template-columns: toRem(330) toRem(330) toRem(350) toRem(325);
+         overflow-x: auto;
+         padding-inline: toRem(16);
+         column-gap: toRem(4);
+      }
+   }
+
+         // .services__column
+
+   &__column {
+      @media (min-width:$tablet){
+          &:nth-child(2){
+            grid-row: 2/3;
+            grid-column: 1/2;
+          } 
+      }
+      padding-bottom: toRem(40);
+      border-bottom: toRem(1) solid var(--rowToolsTitleLine);
+   }
+
+   // .services__title
+
+   &__title {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("gap", 24, 16);
+      @include adaptiveValue("font-size", 32, 18);
+
+      // .services__title_num
+
+      &_num {
+         color: var(--colDarkAndLight);
+         @include adaptiveValue("font-size", 18, 12);
+      }
+
+      // .services__title_text
+
+      &_text {
+         font-family: 'SF Pro Display Medium';
+      }
+   }
+
+      // .services__labels
+
+   &__labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: toRem(8);
+      @include adaptiveValue("margin-top", 28, 16);
+   }
+
+      // .services__label
+
+   &__label {
+      display: inline-block;
+      padding: toRem(12) toRem(24);
+      border-radius: toRem(40);
+      border: 1px solid #ccc;
+      @include adaptiveValue("font-size", 18, 16);
+   }
+}

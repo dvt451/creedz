@@ -1,0 +1,263 @@
+.portfolio{
+   @include adaptiveValue("padding-top", 80, 40);
+   @include adaptiveValue("padding-bottom", 80, 40);
+
+  // .portfolio__content
+
+  &__content {
+   background-color: var(--colDarkAndLight);
+   color: var(--colLightAndDark);
+   @include adaptiveValue("border-radius", 30, 12);
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+
+   .portfolio__top{
+      display: flex;
+      @media (min-width:$mobile){
+         flex: 1 1 auto;
+      }
+      @media (max-width:$tablet){
+         flex-direction: column-reverse;
+      }
+   }
+
+   .portfolio-info{
+      @include adaptiveValue("padding-top", 45, 32);
+      @include adaptiveValue("padding-right", 40, 16);
+      @include adaptiveValue("padding-bottom", 48, 43);
+      @include adaptiveValue("padding-left", 64, 16);
+      @media (max-width:$mobile){
+          height: 100%;
+      }
+      &__content{
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+      }
+   }
+   .portfolio-poster{
+      @media (max-width:$tablet){
+         @include adaptiveValue("min-height", 523, 217,991.98);
+      }
+      padding: toRem(8);
+   .portfolio__labels{
+      padding: toRem(43) toRem(56);
+      @include adaptiveValue("padding-block", 43, 17);
+      @include adaptiveValue("padding-inline", 56, 23);
+   }
+   .portfolio__label{
+      @include adaptiveValue("padding-block", 12, 8);
+      @include adaptiveValue("padding-inline", 24, 16);
+      @include adaptiveValue("font-size", 18, 12);
+      opacity: 1;
+      font-family: 'SF Pro Display Light';
+      color: #fdfdfd;
+      border-color: #fdfdfd;
+   }
+   }
+}
+.portfolio-images{
+   &.md2{
+      @media (min-width:$tablet){
+         display: none;
+      }
+
+   }
+   &.md1{
+      @media (max-width:$tablet){
+         display: none;
+      }
+   }
+   display: flex;
+   @include adaptiveValue("gap", 8, 1);
+   @media (max-width:$tablet){
+      display: flex;
+   }
+   img,video{
+      width: calc(25% - toRem(6));
+      @include adaptiveValue("height", 246, 50);
+      @media (max-width:$tablet){
+         display: none;
+         &:nth-child(2),&:nth-child(1){
+            display: block;
+         }
+         width: 50%;
+         flex: 0 0 50%;
+         height: toVW(500);
+      }
+      object-fit: cover;
+      border: toRem(1) solid #343434;
+      border-radius: toVW(30);
+   }
+   padding: 0 toRem(8) toRem(8) toRem(8);
+}
+   // .portfolio__column
+
+   &__column {
+      @media (min-width:$mobile){
+         flex: 1 1 50%;
+      }
+   }
+
+         // .portfolio__title
+
+   &__title {
+      @media (max-width:$tablet){
+         order: 2;
+      }
+   }
+
+         // .portfolio__text
+
+   &__text {
+      @media (max-width:$tablet){
+         order: 3;
+      }
+      line-height: 172.222%;
+      max-width: toRem(733);
+      @include adaptiveValue("margin-top", 48, 24);
+      @include adaptiveValue("margin-bottom", 40, 37);
+      @include adaptiveValue("font-size", 18, 16);
+      flex: 1 1 auto;
+      @media (max-width:$tablet){
+         line-height: normal;
+      }
+   }
+
+   // .portfolio__labels
+
+   &__labels {
+      @media (max-width:$tablet){
+         order: 4;
+      }
+      display: flex;
+      column-gap: toRem(24);
+      row-gap: toRem(12);
+      flex-wrap: wrap;
+   }
+
+   // .portfolio__label
+      
+   &__label {
+      display: inline-block;
+      border-radius: toRem(40);
+      border: toRem(1) solid var(--colLightAndDark);
+      opacity: 0.6;
+      padding: toRem(8) toRem(16);
+      @include adaptiveValue("font-size", 16, 14);
+      position: relative;
+      z-index: 1;
+   }
+
+      
+   // .portfolio__bottom
+
+   &__bottom {
+      @media (min-width:$tablet){
+          @include adaptiveValue("margin-top", 86, 30,$containerWidth,991.98); 
+      }
+      @media (max-width:$tablet){
+      @include adaptiveValue("margin-bottom", 86, 54);
+      order: 1;
+      }
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media (max-width: em(580)){
+          flex-direction: column-reverse; 
+      }
+      gap: toRem(30);
+   }
+
+   // .portfolio__buttons
+      
+   &__buttons{
+      display: flex;
+      align-items: center;
+      gap: toRem(32);
+      justify-content: center;
+   }
+   // .portfolio__prev
+   // .portfolio__next
+
+   &__prev,&__next{
+      @media (any-hover: hover){
+         &:hover{
+            i{
+               background-color: var(--primary);
+            }
+         }
+      }
+   }
+
+   // .portfolio__button
+
+   &__button {
+      display: flex;
+      align-items: center;
+      gap: toRem(16);
+      &:nth-child(1){
+         flex-direction: row-reverse;
+      }
+      &.disabled{
+         opacity: 0.5;
+      }
+      span{
+         font-family: 'SF Pro Display Medium';
+         font-size: toRem(16);
+      }
+      i{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: all 0.2s;
+         @include adaptiveValue("width", 48, 28);
+         @include adaptiveValue("height", 48, 28);
+         border-radius: toRem(50);
+         background-color: var(--portfolioAcctiveArrow);
+         backdrop-filter: blur(toRem(2));
+         svg{
+            @include adaptiveValue("width", 24, 14);
+            @include adaptiveValue("height", 24, 14);
+         }
+         path{
+            fill: #fdfdfd;
+         }
+      }
+   }
+
+      // .portfolio__view
+
+   &__view {
+      text-align: center;
+      background-color: var(--colLightAndDark);
+      color: var(--colDarkAndLight);
+      @media (any-hover: hover){
+         &:hover{
+            background-color: var(--primary);
+            color: #fdfdfd;
+         }
+      }
+   }
+
+// .portfolio__image
+
+&__image {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   @include adaptiveValue("border-radius", 30, 12);
+   border: toRem(1) solid #343434;
+   cursor: none;
+   video{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+   }
+}
+}

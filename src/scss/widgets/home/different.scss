@@ -1,0 +1,126 @@
+.different{
+   @include adaptiveValue("padding-bottom", 160, 80);
+   @include adaptiveValue("padding-top", 160, 80);
+
+   // .different__container
+
+   &__container {
+      @media (max-width:$mobile){
+          max-width: 100%;
+          padding: 0; 
+      }
+   }
+
+   &__main-title {
+      @include adaptiveValue("margin-bottom", 72, 23);
+      text-align: center;
+   }
+
+   // .different__title
+
+   &__title{
+      font-family: 'SF Pro Display Medium';
+      @include adaptiveValue("font-size", 24, 18);
+      @include adaptiveValue("margin-bottom", 24, 32);
+   }
+   
+   // .different__content
+
+   &__content {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      @media (max-width: em(1200)){
+         grid-template-columns: repeat(4,toRem(321));
+         overflow-y: auto;
+         padding-inline: toRem(15);
+      }
+   }
+
+   // .different__column
+
+   &__column {
+           
+      &:first-child{
+         border-radius: toVW(30) 0 0 toVW(30);
+      }
+      &:last-child{
+         border-radius: 0 toVW(30) toVW(30) 0;
+      }
+      &:not(:last-child) {
+         border-right: none;
+      }
+      padding-block: toRem(32);
+      border: toRem(1) solid var(--rowToolsTitleLine);
+
+      @include adaptiveValue("padding-inline", 34, 16);
+   }
+
+   // .different__head
+
+   &__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span{
+         @include adaptiveValue("font-size", 24, 16);
+      }
+      @include adaptiveValue("margin-bottom", 159, 135);
+   }
+
+   // .different__text
+
+   &__text {
+      font-size: toRem(16);
+      color: var(--colDifferentText);
+   }
+
+
+   &__icon{
+      @include adaptiveValue("width", 90, 64);
+      @include adaptiveValue("height", 90, 64);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &_1,&_2,&_3{
+         svg{
+            g g g{
+               &:nth-child(1){
+                  path{
+                     fill: var(--colDarkAndLight);
+                  }
+               }
+               &:nth-child(2){
+                  path{
+                     fill: var(--colLightAndDark);
+                  }
+               }
+               &:nth-child(3){
+                  path{
+                     fill: var(--colDarkAndLight);
+                  }
+               }
+               &:nth-child(4){
+                  path{
+                     fill: var(--colLightAndDark);
+                  }
+               }
+            }
+         }
+      }
+      &_4{
+         svg{
+            g g g{
+               path{
+                  fill: var(--colLightAndDark);
+               }
+               &:nth-child(1){
+                  path{
+                     fill: var(--colDarkAndLight);
+                  }
+               }
+            }
+         }
+      }
+   }
+}
