@@ -98,6 +98,21 @@ body {
 			background-color: var(--colBlue);
 		}
 	}
+	&.logofolio-html {
+		.footer__send-email button {
+			&:active {
+				svg path {
+					fill: var(--colLogofolio);
+				}
+			}
+		}
+		.awwwards .js-color-bg {
+			fill: var(--colLogofolio);
+		}
+		.progress-bar__filled {
+			background-color: var(--colLogofolio);
+		}
+	}
 	&.skrex-html {
 		.footer__send-email button {
 			&:active {

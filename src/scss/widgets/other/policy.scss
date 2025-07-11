@@ -1,0 +1,60 @@
+.policy {
+	@include adaptiveValue("padding-top", 254, 204);
+	@include adaptiveValue("padding-bottom", 160, 80);
+	// .policy__container
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 64, 24);
+	}
+
+	// .policy__main-title
+
+	&__main-title {
+		font-family: var(--fSFM);
+		@include adaptiveValue("font-size", 64, 40);
+		line-height: normal;
+		@include adaptiveValue("padding-bottom", 40, 8);
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+	}
+
+	// .policy__block
+
+	&__block {
+	}
+
+	// .policy__title
+
+	&__title {
+		@include adaptiveValue("font-size", 32, 24);
+		@include adaptiveValue("padding-bottom", 24, 16);
+	}
+
+	// .policy__text
+
+	&__text {
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 172.222%;
+	}
+	.policy-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(16);
+		// .policy-list__items
+
+		&__items {
+		}
+
+		// .policy-list__title
+
+		&__title {
+			@include adaptiveValue("font-size", 18, 16);
+			font-family: var(--fSFSB);
+			line-height: 172.222%;
+			@include adaptiveValue("padding-bottom", 12, 8);
+		}
+	}
+}
