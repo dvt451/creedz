@@ -26,7 +26,7 @@ export default function Home() {
 			<Header />
 			<main>
 				<Suspense fallback={<div>Loading...</div>}>
-					<Awwwards />
+					{/* <Awwwards /> */}
 					<Head />
 					<Process />
 					<Services />

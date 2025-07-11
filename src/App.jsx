@@ -16,6 +16,7 @@ import Cadence from './pages/usecases/cadence/Cadence';
 import Codelab from './pages/usecases/codelab/Codelab';
 import Logofolio from './pages/usecases/logofolio/Logofolio';
 import Skrex from './pages/usecases/skrex/Skrex';
+import DvtBadge from './widgets/DvtBadge';
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 				<BrowserRouter>
 					<AppWrapper>
 						<Customcursor />
+						<DvtBadge />
 						<Routes>
 							<Route element={<Home />} path='/' />
 							<Route element={<Bookacall />} path='/bookacall' />

@@ -9,7 +9,7 @@ export default function UsecaseGeneral() {
 		<>
 			<PreloaderScaling />
 			<Progressbar />
-			<Awwwards />
+			{/* <Awwwards /> */}
 			<Header />
 		</>
 	)

@@ -187,7 +187,7 @@ const PortfolioPreview = () => {
 	return (
 		<div className="wrapper portfolio-page-wrapper">
 			<CustomScrollStyles className={page} />
-			<Awwwards />
+			{/* <Awwwards /> */}
 			<Header />
 			<main className="portfolio-page" onClick={handleClickAnywhere}>
 				<PreloaderScaling />

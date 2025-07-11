@@ -15,7 +15,7 @@ export default function Terms() {
 			<Preloader />
 			<TopButton />
 			<Header />
-			<Awwwards />
+			{/* <Awwwards /> */}
 			<main className='policy'>
 				<Suspense fallback={<div>Loading...</div>}>
 					<div className="policy__container">

@@ -9,7 +9,8 @@ body {
 .bookacall,
 .notfound,
 .policy {
-	.awwwards {
+	.awwwards,
+	#dvt {
 		mix-blend-mode: difference;
 	}
 	.preloader {
@@ -64,6 +65,9 @@ body {
 		.awwwards .js-color-bg {
 			fill: var(--colGreen);
 		}
+		#dvt {
+			background-color: var(--colGreen) !important;
+		}
 		.progress-bar__filled {
 			background-color: var(--colGreen);
 		}
@@ -78,6 +82,9 @@ body {
 		}
 		.awwwards .js-color-bg {
 			fill: var(--colRed);
+		}
+		#dvt {
+			background-color: var(--colRed) !important;
 		}
 		.progress-bar__filled {
 			background-color: var(--colRed);
@@ -94,6 +101,9 @@ body {
 		.awwwards .js-color-bg {
 			fill: var(--colBlue);
 		}
+		#dvt {
+			background-color: var(--colBlue) !important;
+		}
 		.progress-bar__filled {
 			background-color: var(--colBlue);
 		}
@@ -108,6 +118,9 @@ body {
 		}
 		.awwwards .js-color-bg {
 			fill: var(--colLogofolio);
+		}
+		#dvt {
+			background-color: var(--colLogofolio) !important;
 		}
 		.progress-bar__filled {
 			background-color: var(--colLogofolio);
@@ -124,6 +137,9 @@ body {
 		.awwwards .js-color-bg {
 			fill: var(--colOrange);
 		}
+		#dvt {
+			background-color: var(--colOrange) !important;
+		}
 		.progress-bar__filled {
 			background-color: var(--colOrange);
 		}
@@ -138,6 +154,9 @@ body {
 		}
 		.awwwards .js-color-bg {
 			fill: var(--colApplexnike);
+		}
+		#dvt {
+			background-color: var(--colApplexnike) !important;
 		}
 		.progress-bar__filled {
 			background-color: var(--colApplexnike);
